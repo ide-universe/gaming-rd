@@ -38,14 +38,16 @@ jobs:
         working-directory: ./java-8-features
 
       - name: SonarCloud Scan for Project B-11
-        uses: actions/checkout@v4
+        #uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
         #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=ide-universe_gaming-rd
-        with:
-          args: >
-            -Dsonar.projectKey=ide-universe_gaming-rd
-            -Dsonar.organization=sc-gamer-rd
-            -Dsonar.sources=./java-11-features
-            -Dsonar.host.url=https://sonarcloud.io
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=pk-2 -Dsonar.organization=sc-gamer-rd -Dsonar.host.url=https://sonarcloud.io
+        working-directory: ./java-11-features
+        # with:
+        #   args: >
+        #     -Dsonar.projectKey=ide-universe_gaming-rd
+        #     -Dsonar.organization=sc-gamer-rd
+        #     -Dsonar.sources=./java-11-features
+        #     -Dsonar.host.url=https://sonarcloud.io
