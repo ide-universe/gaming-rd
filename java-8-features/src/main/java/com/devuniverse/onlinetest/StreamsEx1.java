@@ -1,4 +1,4 @@
-package com.devuniverse;
+package com.devuniverse.onlinetest;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -32,6 +32,7 @@ public class StreamsEx1
 
         List<Integer> squaresList = list.stream().map(num -> num * num).collect(Collectors.toList());
         System.out.println("Squares list: " + squaresList);
+
 
 
 
